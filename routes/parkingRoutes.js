@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 const db = require('../db');
@@ -74,4 +73,4 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-module.exports = parkingRoutes; 
+export default parkingRoutes; 

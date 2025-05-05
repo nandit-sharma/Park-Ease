@@ -27,4 +27,4 @@ const parkingLotSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('ParkingLot', parkingLotSchema); 
+export default mongoose.model('ParkingLot', parkingLotSchema); 

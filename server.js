@@ -11,7 +11,7 @@ import { auth, adminAuth } from './middleware/auth.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -35,5 +35,5 @@ app.use('/api/reservations', auth, reservationRoutes);
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 }); 
