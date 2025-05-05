@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { Pool } from 'pg';
 import userRoutes from './routes/userRoutes.js';
-import routes from './routes/parkingRoutes.js';
+import parkingRoutes from './routes/parkingRoutes.js';
 import reservationRoutes from './routes/reservationRoutes.js';
 import errorHandler from './middleware/errorHandler.js';
 import { auth, adminAuth } from './middleware/auth.js';
@@ -29,7 +29,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/users', userRoutes);
-app.use('/api/parking', auth, routes);
+app.use('/api/parking', auth, parkingRoutes);
 app.use('/api/reservations', auth, reservationRoutes);
 
 app.use(errorHandler);
