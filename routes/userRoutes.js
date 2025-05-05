@@ -1,8 +1,9 @@
-const express = require('express');
+import express from 'express';
+import db from '../db.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+
 const router = express.Router();
-const db = require('../db');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 
 const generateToken = (user) => {
     return jwt.sign(

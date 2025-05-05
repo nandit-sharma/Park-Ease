@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import db from '../db.js';
+
 const router = express.Router();
-const db = require('../db');
 
 router.post('/', async (req, res) => {
     try {
