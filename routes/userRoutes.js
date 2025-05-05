@@ -63,4 +63,4 @@ router.get('/', async (req, res) => {
     }
 });
 
-export default userRoutes; 
+export default router; 

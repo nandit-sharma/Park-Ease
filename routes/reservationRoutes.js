@@ -104,4 +104,4 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-export default reservationRoutes; 
+export default router; 

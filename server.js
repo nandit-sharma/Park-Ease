@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { Pool } from 'pg';
-import userRoutes from './routes/userRoutes.js';
-import parkingRoutes from './routes/parkingRoutes.js';
-import reservationRoutes from './routes/reservationRoutes.js';
+import userRouter from './routes/userRoutes.js';
+import parkingRouter from './routes/parkingRoutes.js';
+import reservationRouter from './routes/reservationRoutes.js';
 import errorHandler from './middleware/errorHandler.js';
 import { auth, adminAuth } from './middleware/auth.js';
 
@@ -28,9 +28,9 @@ pool.query('SELECT NOW()', (err, res) => {
 app.use(cors());
 app.use(express.json());
 
-app.use('/api/users', userRoutes);
-app.use('/api/parking', auth, parkingRoutes);
-app.use('/api/reservations', auth, reservationRoutes);
+app.use('/api/users', userRouter);
+app.use('/api/parking', auth, parkingRouter);
+app.use('/api/reservations', auth, reservationRouter);
 
 app.use(errorHandler);
 
